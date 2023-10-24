@@ -1,4 +1,18 @@
 body {
-  background-color: maroon;
+  background-color: linen;
   font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+  color:cornflowerblue;
+  text-align: center;
+}
+.assign{
+  background-color: whitesmoke;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+.assign img {
+  width: 200px;
+  margin: 10px;
 }
