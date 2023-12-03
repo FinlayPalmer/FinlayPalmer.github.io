@@ -1,26 +1,44 @@
+
 body {
   background-color: linen;
   font-family: Arial, Helvetica, sans-serif;
+  display:flex;
+  flex-wrap: wrap;
 }
 h1{
   color:firebrick;
   text-align: center;
+  width:100%;
+  display:block;
+}
+h1:hover{
+  color:blueviolet;
+  text-align: center;
+  width:100%;
+  display: block;
+}
+a{
+  text-decoration: none;
+  color:darksalmon;
 }
 .assign{
   background-color: whitesmoke;
   margin: 10px;
   padding: 10px;
-  display: flex;
   border-radius: 20px;
+  width: 20%;
+  box-shadow: 8px 8px [darkgoldenrod];
+  display: block;
 }
 .assign img {
   width: 200px;
-  padding: 10px;
+  margin: 10px;
   border: 2px solid mintcream;
 }
-a{
-  text-decoration: none;
-  color:darksalmon;
+.assign img:hover{
+  width: 200px;
+  margin: 10px;
+  border: 2px dotted indigo;
 }
 a:hover{
   text-decoration: none;
