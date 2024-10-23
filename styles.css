@@ -1,46 +1,117 @@
-
+/* General styles */
 body {
-  background-color: linen;
-  font-family: Arial, Helvetica, sans-serif;
-  display:flex;
-  flex-wrap: wrap;
+  font-family:"Afacad Flux"; /* Sets a clean, sans-serif font */
+  background-color: #2C363F; /* Light grey background for better contrast */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox for centering content */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
 }
-h1{
-  color:firebrick;
-  text-align: center;
-  width:100%;
-  display:block;
+
+/* Container for the overall layout */
+.container {
+  position: relative; /* Allows absolute positioning of child elements */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
 }
-h1:hover{
-  color:blueviolet;
-  text-align: center;
-  width:100%;
-  display: block;
+
+/* Top-left container for buttons */
+.top-left {
+  position: absolute; /* Absolute positioning */
+  top: 20px; /* Distance from the top */
+  left: 20px; /* Distance from the left */
 }
-a{
-  text-decoration: none;
-  color:darksalmon;
+
+/* Centered content */
+.center-content {
+  text-align: center; /* Centers the text */
 }
-.assign{
-  background-color: whitesmoke;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 20px;
-  width: 20%;
-  box-shadow: 8px 8px [darkgoldenrod];
-  display: block;
+
+h1 {
+  color: #E0E1DD; /* Darker shade for headings */
+  font-size: 2.5em; /* Larger font size for headings */
+  margin-bottom: 0.5em; /* Space below heading */
 }
-.assign img {
-  width: 200px;
-  margin: 10px;
-  border: 2px solid mintcream;
+
+p {
+  color: #778DA9;
+  font-size: 1.2em; /* Slightly larger font size for paragraphs */
+  line-height: 1.6; /* Better line spacing for readability */
+  max-width: 600px; /* Limits width for better readability */
+  margin: 0 auto; /* Center the paragraph text */
 }
-.assign img:hover{
-  width: 200px;
-  margin: 10px;
-  border: 2px dotted indigo;
+
+/* Styles for buttons */
+button {
+  background-color: #922D50; /* Button background color */
+  color: #E0E1DD; /* Button text color */
+  border: none; /* Removes the border */
+  padding: 10px 20px; /* Adds padding */
+  text-align: center; /* Centers the text */
+  text-decoration: none; /* Removes text decoration */
+  display: inline-block; /* Allows block-level styling */
+  font-size: 16px; /* Sets font size */
+  margin: 4px 2px; /* Adds margin */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  /*border-radius: 8px; /* Adds rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Adds transition effects */
 }
-a:hover{
-  text-decoration: none;
-  color:blue;
+
+button:hover {
+  background-color: #CE796B; /* Changes background color on hover */
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
 }
+
+button:active {
+  background-color: #1e6e86; /* Changes background color when button is pressed */
+  /*transform: scale(1); /* Resets the scale when button is pressed */
+}
+
+/* Gallery styles */
+.gallery {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Centers gallery items */
+  align-items: center; /* Centers vertically */
+  margin-top: 20px; /* Space above the gallery */
+  position: relative; /* Allows positioning of arrows */
+}
+
+.gallery-item {
+  max-width: 80%; /* Limits width for better layout */
+  position: relative; /* Allows positioning */
+}
+
+.gallery-item img {
+  width: 100%; /* Full width of the gallery item */
+  height: auto; /* Maintains aspect ratio */
+  max-height: 550px;
+  border-radius: 8px; /* Rounded corners */
+}
+
+.arrow {
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Centers vertically */
+  transform: translateY(-50%); /* Centers vertically */
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+  color: black; /* White text color */
+  border: none; /* Removes border */
+  padding: 20px; /* Adds padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  /*border-radius: 40%; /* Rounded corners */
+  transition: background-color 0.3s; /* Adds transition effects */
+}
+
+.arrow:hover {
+  background-color: #778DA9; /* Darker background on hover */
+}
+
+#prev {
+  left: 10px; /* Position on the left */
+}
+
+#next {
+  right: 10px; /* Position on the right */
+}
+

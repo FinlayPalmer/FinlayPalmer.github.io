@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starry Sky with Twinkling and Color Change</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      animation: fadeToBlackAndBack 30s ease infinite;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes fadeToBlackAndBack {
+      0% { background: white; }
+      50% { background: black; }
+      100% { background: white; }
+    }
+
+    h1 {
+      color: #fff;
+      animation: textColorChange 30s ease infinite;
+    }
+
+    @keyframes textColorChange {
+      0% { color: #000; }
+      50% { color: #fff; }
+      100% { color: #000; }
+    }
+
+    /* Stars Container */
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      background: black; /* Initially black for white background */
+      border-radius: 50%;
+      animation: twinkle infinite ease-in-out, colorChange 30s ease infinite;
+    }
+
+    /* Twinkling effect - independent and continuous */
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* Color change to sync with the background */
+    @keyframes colorChange {
+      0%, 100% { background-color: black; } /* Black stars when background is white */
+      50% { background-color: white; }      /* White stars when background is black */
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Fading Background with Color-Changing, Twinkling Stars</h1>
+  <div class="stars" id="stars"></div> <!-- Star container -->
+
+  <script>
+    // Generate random stars
+    function createStar() {
+      const star = document.createElement("div");
+      star.classList.add("star");
+
+      // Random position, size, duration, and delay
+      const x = Math.random() * 100; // Random left position (percentage)
+      const y = Math.random() * 100; // Random top position (percentage)
+      const size = Math.random() * 4; // Random size between 0 and 4 pixels
+      const duration = Math.random() * 3 + 2; // Random duration between 2 and 5 seconds
+      const delay = Math.random() * 5; // Random delay up to 5 seconds
+
+      // Apply random styles
+      star.style.left = x + "vw";
+      star.style.top = y + "vh";
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+      star.style.animationDuration = duration + "s, 30s"; // Independent twinkling and color-change duration
+      star.style.animationDelay = delay + "s";
+
+      return star;
+    }
+
+    // Append stars to container
+    const starContainer = document.getElementById("stars");
+    const numStars = 500; // Number of stars
+    for (let i = 0; i < numStars; i++) {
+      const star = createStar();
+      starContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
